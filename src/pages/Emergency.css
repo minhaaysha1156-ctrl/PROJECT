@@ -1,0 +1,163 @@
+.emergency-container {
+    background-color: #ffebee;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.emergency-container.sent {
+    background-color: var(--emergency-color);
+    color: white;
+    justify-content: center;
+}
+
+.emergency-content {
+    text-align: center;
+    animation: flash 1s infinite alternate;
+}
+
+.emergency-content h1 {
+    font-size: 3rem;
+    margin: 1rem 0;
+}
+
+.emergency-header {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3rem;
+    background: white;
+    padding: 10px 20px;
+    border-radius: 50px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.location-status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 500;
+    color: #555;
+}
+
+.silent-toggle {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: none;
+    color: #555;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.silent-toggle:hover {
+    color: var(--primary-color);
+}
+
+.emergency-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.sos-button {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background-color: var(--emergency-color);
+    color: white;
+    border: 8px solid rgba(211, 47, 47, 0.3);
+    font-size: 4rem;
+    font-weight: 900;
+    box-shadow: 0 10px 30px rgba(211, 47, 47, 0.4);
+    transition: all 0.2s ease;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.sos-button:active {
+    transform: scale(0.95);
+    background-color: var(--emergency-hover);
+}
+
+.sos-button::after {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    right: -20px;
+    bottom: -20px;
+    border-radius: 50%;
+    border: 2px solid var(--emergency-color);
+    animation: ripple 2s infinite;
+    opacity: 0;
+}
+
+.sos-instruction {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--emergency-color);
+    margin-bottom: 0.5rem;
+}
+
+.sos-detail {
+    color: #666;
+    max-width: 400px;
+}
+
+/* Animations */
+@keyframes ripple {
+    0% {
+        transform: scale(0.8);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
+
+@keyframes flash {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.8;
+    }
+}
+
+/* Silent Mode */
+.emergency-container.silent {
+    background-color: #333;
+}
+
+.emergency-container.silent .emergency-header {
+    background-color: #444;
+    color: #ccc;
+}
+
+.emergency-container.silent .location-status,
+.emergency-container.silent .silent-toggle {
+    color: #ccc;
+}
+
+.emergency-container.silent .sos-button {
+    background-color: #555;
+    border-color: #666;
+    box-shadow: none;
+    color: #888;
+}
+
+.emergency-container.silent .sos-instruction,
+.emergency-container.silent .sos-detail {
+    color: #888;
+}
