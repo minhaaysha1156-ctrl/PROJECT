@@ -12,7 +12,7 @@
 - Member 2: Sharbina C P - Muhammed Abdurahiman Memorial Orphanage College
 
 ### Hosted Project Link
-[Link to your hosted project if available, otherwise 'Not yet hosted']
+[https://project-yizn.vercel.app/]
 
 ### Project Description
 SheShield is a comprehensive women's safety platform designed to bridge the gap between digital protection and real-world safety. It provides a secure environment for reporting abuse, accessing resources, and triggering immediate emergency assistance, specifically addressing threats like deepfakes and harassment.
